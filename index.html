@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mazerunner Homepage</title>
   <style>
     body {
@@ -39,6 +39,24 @@
     a.button:hover {
       background-color: #005f99;
     }
+
+    /* Subtext directly related to the button */
+    .subtext {
+      display: block;           /* make it a block so margin:auto centers it */
+      margin: 14px auto 0;      /* small readable gap above, align horizontally center */
+      font-size: 0.8em;
+      color: #666;
+      max-width: 720px;         /* keep the line length readable on large screens */
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.8em;
+      color: #666;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
@@ -52,17 +70,19 @@
     <p>Welcome to the homepage of the MtG format Mazerunner! Mazerunner is a competitive Commander-style variant of Magic where players
     compete over a series of games in a league style.</p>
     <a href="MCR_file.pdf" class="button" target="_blank" rel="noopener noreferrer">View the Mazerunner Comprehensive Rules PDF</a>
+
+    <!-- moved the update text directly beneath the button and added spacing via .subtext -->
+    <em class="subtext">Last MCR Update: Nov. 18, 2025</em>
   </main>
-  <em style="text-align:center; margin-top:50px; font-size:0.8em; color:#666;">Last MCR Update: Nov. 18, 2025</em>
+
+  <footer>
+    © 2025 Dalton Moore. All rights reserved.
+    <br>
+    Mazerunner is not affiliated with or sponsored by Wizards of the Coast. Wizards of the Coast, Magic the Gathering, and their logos
+    and other related content and imagery are property of Wizards of the Coast LLC, with use permitted by Wizards of the Coast's Fan
+    Content Policy. Some content is © Scryfall. Mazerunner is not affiliated with Scryfall. All other content is © Dalton Moore and
+    the Mazerunner Team.
+  </footer>
 
 </body>
-  <footer style="text-align:center; margin-top:50px; font-size:0.8em; color:#666;">
-  © 2025 Dalton Moore. All rights reserved.
-    <br>
-   Mazerunner is not affiliated with or sponsored by Wizards of the Coast. Wizards of the Coast, Magic the Gathering, and their logos 
-    and other related content and imagery are property of Wizards of the Coast LLC, with use permitted by Wizards of the Coast's Fan 
-    Content Policy. Some content is © Scryfall. Mazerunner is not affiliated with Scryfall. All other content is © Dalton Moore and 
-    the Mazerunner Team.
-</footer>
-
 </html>

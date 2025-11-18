@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MCR</title>
+  <style>
+    :root {
+      --page-bg: #f3f6fb;
+      --card-bg: #fff;
+      --accent: #007acc;
+      --accent-dark: #005f99;
+      --text: #333;
+      --card-max-width: 1000px;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--page-bg);
+      color: var(--text);
+    }
+
+    header {
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: var(--card-max-width);
+      margin: 0 auto;
+      padding: 0 16px 48px;
+    }
+
+    .viewer-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 6px 24px rgba(16, 24, 40, 0.08);
+      overflow: hidden;
+      border: 1px solid rgba(16,24,40,0.04);
+    }
+
+    .viewer-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+      border-bottom: 1px solid rgba(16,24,40,0.04);
+    }
+
+    .viewer-toolbar .left {
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(0,122,204,0.12);
+    }
+
+    .btn:focus { outline: 2px solid rgba(0,122,204,0.18); outline-offset: 2px; }
+
+    /* PDF area */
+    .pdf-frame {
+      width: 100%;
+      height: calc(100vh - 260px); /* reasonable height on desktop; adjusts on smaller screens */
+      min-height: 420px;
+      border: none;
+      display: block;
+    }
+
+    /* small screens */
+    @media (max-width: 640px) {
+      .pdf-frame {
+        height: calc(100vh - 220px);
+      }
+      .viewer-toolbar { flex-direction: column; align-items: stretch; gap: 10px; }
+      .actions { justify-content: flex-start; }
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 12px;
+      background-color: transparent;
+      color: var(--accent);
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid rgba(0,122,204,0.08);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="margin:0;">MCR</h1>
+    <p style="margin:6px 0 0 0; color: #666;">View or download the PDF</p>
+  </header>
+
+  <div class="container">
+    <div class="viewer-card" role="region" aria-label="PDF viewer">
+      <div class="viewer-toolbar">
+        <div class="left">MCR_file.pdf</div>
+        <div class="actions">
+          <a class="btn" href="MCR_file.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          <a class="btn secondary" href="MCR_file.pdf" download>Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Use embed for a cleaner PDF rendering; fallback link included inside -->
+      <embed class="pdf-frame" src="MCR_file.pdf" type="application/pdf">
+      <div style="padding:16px;">
+        Your browser does not support embedded PDFs. You can
+        <a href="MCR_file.pdf">download the PDF</a> instead.
+      </div>
+    </div>
+
+    <p style="text-align:center;">
+      <a href="index.html" class="back-link">Back to Main Page</a>
+    </p>
+  </div>
+</body>
+</html>
